@@ -29,8 +29,8 @@ public class Simulation {
     public String getHeader() {
         String s = "";
         s = s + "\nTime\t";
-        s = s + "Velocity\t\t"; s = s + "Fuel\t\t";
-        s = s + "Altitude\t\t"; s = s + "Burn\n";
+        s = s + "Velocity\t"; s = s + "Fuel\t\t";
+        s = s + "Altitude\t"; s = s + "Burn\n";
         s = s + "----\t";
         s = s + "-----\t\t";
         s = s + "----\t\t";
@@ -74,8 +74,13 @@ public class Simulation {
 
     public static void main(String[] args) {
         // create a new Simulation object with a random starting altitude
+        Vehicle lander = new Vehicle();
+        Simulation sim = new Simulation(lander);
         // create a new BurnInputStream
+        //BurnInputStream bis = new BurnInputStream();
         // pass the new BurnInputStream to the runSimulation method
+        OnBoardComputer obc = new OnBoardComputer();
+        sim.runSimulation(obc);
     }
 
 }
